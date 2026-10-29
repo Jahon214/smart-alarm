@@ -2,6 +2,9 @@
 
 Zamonaviy, yuqori aniqlikdagi va ko'p funksiyali veb-ilova: **7 xil Ultra-Pro soat dizayni**, **2-tugmali uyqu hisoblagich va biometrik tahlil**, hamda **20 xil Web Audio budilnik signallari**.
 
+- 🌐 **Jonli Veb-sayt (Live Demo):** [https://smartalarm-two.vercel.app](https://smartalarm-two.vercel.app)
+- 🐙 **GitHub Repository:** [https://github.com/Jahon214/smart-alarm](https://github.com/Jahon214/smart-alarm)
+
 ---
 
 ## 🌟 Asosiy Imkoniyatlar (Features)
