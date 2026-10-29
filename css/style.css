@@ -1,0 +1,197 @@
+:root {
+  --accent: #6366f1;
+  --accent-glow: rgba(99, 102, 241, 0.45);
+  --accent-soft: rgba(99, 102, 241, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: radial-gradient(circle at 15% 15%, rgba(99, 102, 241, 0.18), transparent 42%),
+              radial-gradient(circle at 85% 80%, rgba(16, 185, 129, 0.14), transparent 42%),
+              #070a13;
+  color: #f8fafc;
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: background 0.5s ease;
+}
+
+/* Background Atmospheric Themes */
+body[data-bg="aurora"] {
+  background: radial-gradient(circle at 15% 15%, rgba(99, 102, 241, 0.25), transparent 42%),
+              radial-gradient(circle at 85% 25%, rgba(6, 182, 212, 0.20), transparent 42%),
+              radial-gradient(circle at 50% 85%, rgba(16, 185, 129, 0.18), transparent 48%),
+              #060913;
+}
+
+body[data-bg="royal"] {
+  background: radial-gradient(circle at 20% 20%, rgba(245, 158, 11, 0.25), transparent 42%),
+              radial-gradient(circle at 80% 75%, rgba(217, 119, 6, 0.18), transparent 45%),
+              #080706;
+}
+
+body[data-bg="cyber"] {
+  background: radial-gradient(circle at 20% 20%, rgba(236, 72, 153, 0.25), transparent 42%),
+              radial-gradient(circle at 85% 75%, rgba(6, 182, 212, 0.25), transparent 45%),
+              #070512;
+}
+
+body[data-bg="galaxy"] {
+  background: radial-gradient(circle at 50% 20%, rgba(139, 92, 246, 0.28), transparent 48%),
+              radial-gradient(circle at 15% 80%, rgba(59, 130, 246, 0.22), transparent 45%),
+              #03050d;
+}
+
+body[data-bg="oled"] {
+  background: #000000;
+}
+
+/* Glassmorphism Cards */
+.glass-card {
+  background: linear-gradient(135deg, rgba(17, 24, 39, 0.82) 0%, rgba(15, 23, 42, 0.70) 100%);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.55), inset 0 1px 1px rgba(255, 255, 255, 0.12);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.glass-card:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.glass-card-sub {
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Dynamic Accent Helpers */
+.accent-glow {
+  box-shadow: 0 0 35px var(--accent-glow);
+}
+
+.accent-border {
+  border-color: var(--accent);
+}
+
+.accent-text {
+  color: var(--accent);
+}
+
+.accent-bg {
+  background-color: var(--accent);
+}
+
+.cyber-glow {
+  text-shadow: 0 0 22px var(--accent-glow), 0 0 45px var(--accent-glow);
+}
+
+/* 3D Flip Clock Boxes */
+.flip-box {
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 49.5%, #080d1a 50.5%, #1e293b 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 2px 6px rgba(255, 255, 255, 0.08), 0 14px 28px rgba(0, 0, 0, 0.6);
+  position: relative;
+  overflow: hidden;
+}
+
+.flip-box::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 2px;
+  background: rgba(0, 0, 0, 0.85);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08);
+  pointer-events: none;
+}
+
+/* Animations */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes float-aurora {
+  0%, 100% { transform: translate(0px, 0px) scale(1); }
+  50% { transform: translate(25px, -20px) scale(1.08); }
+}
+
+@keyframes holo-scan {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 0% 200%; }
+}
+
+@keyframes pulse-ring {
+  0%, 100% { transform: scale(1); opacity: 0.85; }
+  50% { transform: scale(1.06); opacity: 1; }
+}
+
+.tourbillon-spin {
+  animation: spin-slow 12s linear infinite;
+  transform-origin: 100px 132px;
+}
+
+.aurora-blob {
+  animation: float-aurora 10s ease-in-out infinite;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.holo-frame {
+  background: linear-gradient(180deg, rgba(6, 182, 212, 0.08) 0%, rgba(99, 102, 241, 0.16) 50%, rgba(6, 182, 212, 0.08) 100%);
+  background-size: 100% 200%;
+  animation: holo-scan 6s linear infinite;
+  border: 1px solid rgba(6, 182, 212, 0.4);
+  box-shadow: 0 0 45px rgba(6, 182, 212, 0.25), inset 0 0 25px rgba(99, 102, 241, 0.18);
+}
+
+/* Fullscreen Bedside Mode */
+body.fullscreen-nightstand header,
+body.fullscreen-nightstand footer,
+body.fullscreen-nightstand .non-nightstand {
+  display: none !important;
+}
+
+body.fullscreen-nightstand {
+  padding: 0 !important;
+  margin: 0 !important;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body.fullscreen-nightstand #clockHeroSection {
+  width: 100vw;
+  height: 100vh;
+  border-radius: 0;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.6);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.5);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.8);
+}

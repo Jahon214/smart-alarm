@@ -1,0 +1,17 @@
+{
+  "name": "Aqlli Budilnik Pro & Uyqu Hisoblagich",
+  "short_name": "Aqlli Budilnik",
+  "description": "7 xil zamonaviy soat dizayni, 2 tugmali uyqu hisoblagich va 20 xil haqiqiy budilnik ovozlari.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#070a13",
+  "theme_color": "#070a13",
+  "icons": [
+    {
+      "src": "icons/icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
